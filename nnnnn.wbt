@@ -1,0 +1,352 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/ThreadMetalPlate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/manhole/protos/SquareManhole.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/computers/protos/Monitor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/GalvanizedMetal.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/CorrugatedMetal.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/fire_extinguisher/protos/FireExtinguisher.proto"
+EXTERNPROTO "../protos/ConveyorBelt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/PlasticCrate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/Can.proto"
+EXTERNPROTO "../protos/UR5e.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/devices/robotiq/protos/Robotiq3fGripper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/fruits/protos/Apple.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/fruits/protos/Orange.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/BeerBottle.proto"
+
+WorldInfo {
+  info [
+    "Universal Robot UR3e, UR5e and UR10e grasping cans using Robotiq 3F grippers."
+  ]
+  title "Universal Robot"
+  basicTimeStep 8
+  physicsDisableAngularThreshold 0.1
+  contactProperties [
+    ContactProperties {
+      bounce 0.1
+    }
+    ContactProperties {
+      material1 "slope"
+      coulombFriction [
+        0.5
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.3068752817079007 -0.4013457906842887 0.8629884806743944 4.833131830858849
+  position 0.37437647889803044 0.562653861035943 2.2430454008029708
+  exposure 1.7
+}
+Floor {
+  size 17 5
+  appearance ThreadMetalPlate {
+  }
+}
+SquareManhole {
+  translation 0.560459 -1.782 -0.03
+  rotation 0 0 1 -1.5707963071795863
+}
+Pose {
+  translation 2.52024 2.10889 0.796
+  rotation 0 0 1 -1.3089953071795861
+  children [
+    Monitor {
+    }
+  ]
+}
+Wall {
+  translation -2.835 2.58 0
+  rotation 0 1 0 0
+  size 9 0.2 2.4
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 2 1
+    }
+  }
+}
+Wall {
+  translation 4.375 2.58 0
+  name "wall(2)"
+  size 5 0.2 2.4
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 2 1
+    }
+  }
+}
+Wall {
+  translation 1.77 2.58 1.2
+  name "wall(3)"
+  size 0.21 0.2 1.2
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 0.1 0.7
+    }
+  }
+}
+Wall {
+  translation 0 -2.42 0
+  name "wall(1)"
+  size 15 0.2 2.4
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 2 1
+    }
+  }
+}
+Pose {
+  translation 1.77 2.67 1.05
+  rotation 1 0 0 1.5707996938995747
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.23 0.3 0.01
+      }
+    }
+  ]
+}
+SolidBox {
+  translation -0.135 -0.45 0.305
+  size 1.5 0.4 0.61
+  appearance GalvanizedMetal {
+  }
+}
+UR5e {
+  translation 0 -0.45 0.61
+  rotation 0 0 1 -1.5708
+  controller "merge_test"
+  supervisor TRUE
+  toolSlot [
+    DistanceSensor {
+      translation -0.022 0.12 0
+      name "distance sensor(1)"
+    }
+    DistanceSensor {
+      translation -0.02 0.54 0
+    }
+    Robotiq3fGripper {
+    }
+    Camera {
+      translation 4.63047e-10 -0.06 -0.16
+      rotation 0.7071072811865696 0.7071062811861719 1.0171504044775673e-08 3.14159
+      recognitionColors [
+        0 0 0
+      ]
+      fieldOfView 1
+      width 640
+      height 640
+    }
+  ]
+}
+SolidBox {
+  translation 1.015 -0.0323 0.45
+  name "box(5)"
+  size 0.8 0.4 0.91
+  appearance GalvanizedMetal {
+  }
+}
+SolidBox {
+  translation 0.8 0.3324 0.8246
+  rotation 1 0 0 2.61799
+  name "box(6)"
+  size 0.3 0.5 0.02
+  contactMaterial "slope"
+  appearance GalvanizedMetal {
+  }
+}
+SolidBox {
+  translation 0.96 0.339556 0.837316
+  rotation -0.4472131236215756 -0.4472131236215756 0.7745972141192264 -1.823476307179586
+  name "box(7)"
+  size 0.05 0.02 0.5
+  appearance GalvanizedMetal {
+  }
+}
+SolidBox {
+  translation 0.64 0.339556 0.837316
+  rotation -0.4472131236215756 -0.4472131236215756 0.7745972141192264 -1.823476307179586
+  name "box(8)"
+  size 0.05 0.02 0.5
+  appearance GalvanizedMetal {
+  }
+}
+SolidBox {
+  translation 0.64 0.239196 0.583496
+  rotation 0.6947470600351803 0.6947460600350939 -0.1861570160863869 2.773492
+  name "box(9)"
+  size 0.05 0.02 0.5
+  appearance GalvanizedMetal {
+  }
+}
+SolidBox {
+  translation 0.96 0.239196 0.583496
+  rotation 0.6947470600351803 0.6947460600350939 -0.1861570160863869 2.773492
+  name "box(10)"
+  size 0.05 0.02 0.5
+  appearance GalvanizedMetal {
+  }
+}
+SolidBox {
+  translation 1.77 -0.11 0.375
+  rotation 0 0 1 3.1415919999999997
+  name "box(2)"
+  size 0.2 0.18 0.75
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 0.7 0.7
+    }
+  }
+}
+SolidBox {
+  translation 1.77 -2.28 0.375
+  rotation 0 0 1 3.1415919999999997
+  name "box(4)"
+  size 0.2 0.18 0.75
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 0.7 0.7
+    }
+  }
+}
+SolidBox {
+  translation 1.77 2.43 0.375
+  rotation 0 0 1 3.1415919999999997
+  name "box(3)"
+  size 0.2 0.18 0.75
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 0.7 0.7
+    }
+  }
+}
+FireExtinguisher {
+  translation -0.757709997854157 1.7899999996895564 -0.0011771987859748312
+  rotation 0.0005897627091401703 -0.000788275660121241 -0.999999515400598 1.5708004845724186
+}
+DEF CONVEYOR ConveyorBelt {
+  translation 3.18 -1.05 0
+  rotation 0 0 1 3.141592
+  size 8 0.7 0.6
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 6 3.1
+    }
+  }
+  borderHeight 0
+  speed 0.25
+}
+BeerBottle {
+  translation 4 -1.2688 0.621013
+  rotation 0 0 1 3.14159
+}
+Orange {
+  translation -0.29 -0.89 0.661013
+}
+Apple {
+  translation 0.83 -1.25685 0.649808
+}
+ConveyorBelt {
+  translation 0 0.69 0
+  rotation 0 1 0 0
+  name "conveyor belt(1)"
+  size 13 0.5 0.25
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 6 3.1
+    }
+  }
+  borderHeight 0
+  speed 0.062
+  acceleration 0.012
+  timer 90
+}
+PlasticCrate {
+  translation 0.7529924870871896 0.6799998601465777 0.24984963247128866
+  rotation 0.6549076785695198 -0.7557085685087602 0.0007014507275945541 0.00010871081895851905
+  size 0.6 0.45 0.4
+  mass 1
+}
+PlasticCrate {
+  translation 0.12299254176313064 0.6799999767224264 0.24987811937939888
+  rotation 0.038097400119316636 -0.9992740284834768 -6.405116992786604e-05 9.276757820197307e-06
+  name "plastic crate(1)"
+  size 0.6 0.45 0.4
+  mass 1
+}
+PlasticCrate {
+  translation -0.507018915763749 0.6799999806103872 0.24987228021110494
+  rotation 0.03810229008343754 -0.9992738424617142 -5.711566180599282e-05 9.276759547167168e-06
+  name "plastic crate(2)"
+  size 0.6 0.45 0.4
+  mass 1
+}
+PlasticCrate {
+  translation -1.137018916025007 0.6799999809439657 0.24986644114899967
+  rotation 0.03810717997040336 -0.9992736559984602 -5.711544629257195e-05 9.276761278212351e-06
+  name "plastic crate(3)"
+  size 0.6 0.45 0.4
+  mass 1
+}
+PlasticCrate {
+  translation -1.7770189162904169 0.6799999812828391 0.24986050940336899
+  rotation 0.0381121474728815 -0.9992734665510015 -5.7115231326293805e-05 9.276763036968805e-06
+  name "plastic crate(4)"
+  size 0.6 0.45 0.4
+  mass 1
+}
+Can {
+  translation 1.77 2.67 0.06106566499999977
+  rotation -0.004278476380206967 -0.023210434499556256 0.9997214463890458 4.752827493255862e-16
+  name "can(14)"
+}
+Can {
+  translation 1.77 3.8 0.06106566499999977
+  rotation -0.004278476380206967 -0.023210434499556256 0.9997214463890458 4.752827493255862e-16
+  name "can(15)"
+}
+Can {
+  translation 1.77 4.7 0.06106566499999977
+  rotation 0.0009085843613125367 0.03958970559229811 -0.9992156072067597 2.742505337495457e-16
+  name "can(16)"
+}
+Can {
+  translation 1.77 5.6 0.06106566499999977
+  rotation 0.0009085843613125367 0.03958970559229811 -0.9992156072067597 2.742505337495457e-16
+  name "can(17)"
+}
+Can {
+  translation 1.77 6.5 0.06106566499999977
+  rotation 0.0009085843613125367 0.03958970559229811 -0.9992156072067597 2.742505337495457e-16
+  name "can(18)"
+}
+Can {
+  translation 1.77 7.4 0.06106566499999977
+  rotation 0.0009085843613125367 0.03958970559229811 -0.9992156072067597 2.742505337495457e-16
+  name "can(19)"
+}
+Can {
+  translation 3 -1.256 0.681
+  rotation 0 0 -1 -2.616405307179586
+  name "can(13)"
+}
+Can {
+  translation 0.14200689088733237 0.6060094302082626 0.5535277436116678
+  rotation 0.07088921599151764 -0.1104977618366631 -0.9913450275687047 -1.5269721228726594
+  name "can(1)"
+}
+Background {
+  skyColor [
+    1 1 1
+  ]
+}
